@@ -1,0 +1,712 @@
+/* ---------- Login Page ---------- */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--leaf-light), #fff);
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 40px;
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.login-logo {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-logo-img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: block;
+  box-shadow: var(--shadow-soft);
+}
+
+.login-brand h1 {
+  font-size: 1.5rem;
+  margin: 0 0 6px;
+}
+
+.login-brand p {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.login-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ivy-green-dark);
+  margin-top: 12px;
+}
+
+.login-form input {
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.login-form input:focus {
+  border-color: var(--ivy-green);
+}
+
+.login-error {
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 10px;
+}
+
+.login-info {
+  color: var(--ivy-green-dark);
+  background: var(--leaf-light);
+  font-size: 0.85rem;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+}
+
+.login-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: #f1f3f1;
+  padding: 4px;
+  border-radius: var(--radius-md);
+}
+
+.login-tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  border-radius: calc(var(--radius-md) - 2px);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.login-tab.active {
+  background: #fff;
+  color: var(--ivy-green-dark);
+  box-shadow: var(--shadow-soft);
+}
+
+.login-btn {
+  margin-top: 24px;
+  padding: 13px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--ivy-green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: var(--ivy-green-dark);
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.8rem;
+  color: var(--text-soft);
+}
+
+/* ---------- App Shell (Sidebar Layout) ---------- */
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background: var(--ivy-green-dark);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 16px;
+}
+
+.sidebar-logo-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.sidebar-brand-text {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 12px;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: var(--radius-md);
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-nav-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.sidebar-nav-item.active {
+  background: var(--ivy-green);
+  color: #fff;
+}
+
+.sidebar-nav-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.sidebar-footer {
+  padding: 16px 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ivy-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.sidebar-user-email {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-logout-btn {
+  padding: 9px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: background 0.15s;
+}
+
+.sidebar-logout-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.content-header {
+  padding: 24px 32px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.content-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.content-main {
+  max-width: 1400px;
+  padding: 28px 32px 60px;
+}
+
+/* ---------- Students Page ---------- */
+.students-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.students-search {
+  flex: 1;
+  max-width: 360px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+.students-count {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.students-table-wrapper {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.students-table th,
+.students-table td {
+  padding: 14px 18px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.students-table thead th {
+  background: var(--leaf-light);
+  color: var(--ivy-green-dark);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  position: sticky;
+  top: 0;
+}
+
+.students-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.students-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.students-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.students-id-cell {
+  font-weight: 700;
+  color: var(--ivy-green-dark);
+}
+
+.students-upper {
+  text-transform: uppercase;
+}
+
+.enrollment-upper {
+  text-transform: uppercase;
+}
+
+/* ---------- School Info Page ---------- */
+.school-info-form {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 28px 32px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+.school-info-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.school-info-field label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 6px;
+}
+
+.school-info-field input {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.school-info-field input:focus {
+  outline: none;
+  border-color: var(--ivy-green);
+}
+
+.school-info-save-btn {
+  margin-top: 8px;
+  max-width: 220px;
+}
+
+/* ---------- Dashboard (legacy header, unused with sidebar layout) ---------- */
+.dashboard {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 32px;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.dashboard-brand h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.dashboard-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.logout-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text);
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #f2f2f2;
+}
+
+.dashboard-nav-link {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--ivy-green, #2f6b3d);
+  text-decoration: none;
+}
+
+.dashboard-nav-link:hover {
+  text-decoration: underline;
+}
+
+.template-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  max-width: 480px;
+}
+
+.template-selector label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.template-selector select {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.template-placeholders {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+}
+
+.template-placeholders code {
+  background: #f1f1f1;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-right: 6px;
+  font-size: 0.8rem;
+}
+
+.template-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.template-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.template-field label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.template-field input {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.template-field .ql-container {
+  min-height: 260px;
+  font-size: 0.95rem;
+}
+
+.template-field .ql-editor {
+  min-height: 260px;
+}
+
+.template-success {
+  color: #2f6b3d;
+  font-weight: 600;
+}
+
+.dashboard-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 60px;
+}
+
+.dashboard-main h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  transition: all 0.2s;
+}
+
+.filter-tab.active {
+  background: var(--ivy-green);
+  border-color: var(--ivy-green);
+  color: #fff;
+}
+
+.enrollment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--text-soft);
+  padding: 40px 0;
+}
+
+.enrollment-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.enrollment-main {
+  flex: 1;
+  min-width: 260px;
+}
+
+.enrollment-id-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.enrollment-id {
+  font-weight: 800;
+  color: var(--ivy-green-dark);
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background: #fff4e0;
+  color: #b8720a;
+}
+
+.status-accepted {
+  background: #e3f6e8;
+  color: #1f7a3a;
+}
+
+.status-rejected {
+  background: #fde7e7;
+  color: #c0392b;
+}
+
+.enrollment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.enrollment-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.enrollment-grid strong {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-soft);
+}
+
+.enrollment-grid span {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.enrollment-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 120px;
+}
+
+.btn-accept,
+.btn-reject {
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  transition: opacity 0.2s;
+}
+
+.btn-accept {
+  background: var(--ivy-green);
+}
+
+.btn-reject {
+  background: #c0392b;
+}
+
+.btn-accept:hover,
+.btn-reject:hover {
+  opacity: 0.88;
+}
