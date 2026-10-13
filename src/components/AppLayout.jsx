@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import logo from '../assets/littleivy.jpg'
+import logo from '../assets/littleivy-logo-new.jpeg'
 
 const NAV_ITEMS = [
   { to: '/dashboard', label: 'Dashboard', icon: '🏠' },

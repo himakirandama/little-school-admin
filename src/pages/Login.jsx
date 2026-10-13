@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import logo from '../assets/littleivy.jpg'
+import logo from '../assets/littleivy-logo-new.jpeg'
 
 function Login() {
   const [mode, setMode] = useState('login') // 'login' | 'signup'
@@ -11,6 +11,7 @@ function Login() {
   const [error, setError] = useState('')
   const [info, setInfo] = useState('')
   const [loading, setLoading] = useState(false)
+  const [requestSubmitted, setRequestSubmitted] = useState(false)
   const { login, signup } = useAuth()
   const navigate = useNavigate()
 
@@ -20,6 +21,7 @@ function Login() {
     setInfo('')
     setPassword('')
     setConfirmPassword('')
+    setRequestSubmitted(false)
   }
 
   async function handleSubmit(e) {
@@ -50,6 +52,7 @@ function Login() {
         setEmail('')
         setPassword('')
         setConfirmPassword('')
+        setRequestSubmitted(true)
       } else {
         setError(result.error)
       }
@@ -123,14 +126,16 @@ function Login() {
           {error && <p className="login-error">{error}</p>}
           {info && <p className="login-info">{info}</p>}
 
-          <button type="submit" className="login-btn" disabled={loading}>
-            {loading
-              ? mode === 'login'
-                ? 'Signing in…'
-                : 'Submitting…'
-              : mode === 'login'
-                ? 'Sign In'
-                : 'Request Access'}
+          <button type="submit" className="login-btn" disabled={loading || requestSubmitted}>
+            {mode === 'signup' && requestSubmitted
+              ? 'Request Submitted'
+              : loading
+                ? mode === 'login'
+                  ? 'Signing in…'
+                  : 'Submitting…'
+                : mode === 'login'
+                  ? 'Sign In'
+                  : 'Request Access'}
           </button>
         </form>
 
